@@ -49,8 +49,10 @@ const CardRowStyles = styled.div`
   .cardrow__header {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     height: 40px;
+    margin-bottom: 16px;
 
     .cardrow__title {
       color: #333;
