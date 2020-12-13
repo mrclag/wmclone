@@ -5,7 +5,7 @@ import styled from 'styled-components'
 interface NavLinkProps {
   name: string,
   url: string,
-}
+ }
 
 interface NavLinkStyleProps {
   selected: boolean
