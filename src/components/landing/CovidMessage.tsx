@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
-interface CovidMessageProps {
 
+interface CovidMessageProps {
+}
+interface CovidMessageStyleProps {
+  display: boolean;
 }
 
 export const CovidMessage: React.FC<CovidMessageProps> = ({}) => {
+  const [display, setDisplay] = useState(true)
+
   return (
-    <CovidMessageStyles>
+    <CovidMessageStyles display={display}>
       <div className="message-wrapper">
        <div className="message">
         <strong>COVID-19</strong>:{' '}
@@ -15,8 +20,8 @@ export const CovidMessage: React.FC<CovidMessageProps> = ({}) => {
           stay safe by ordering online for delivery or curbside pickup, where available.
         </span>
        </div>
-       <div className="message-exit">
-         <div className="fas fa-times"></div>
+       <div className="message-exit" onClick={()=> setDisplay(false)}>
+         <i className="fas fa-times"/>
        </div>
       </div>
     </CovidMessageStyles>
@@ -28,6 +33,7 @@ const CovidMessageStyles = styled.div`
   background: #FA943E;
   width: 100%;
   margin: 0 auto;
+  display: ${(props: CovidMessageStyleProps) => props.display ? 'true' : 'none'};
 
   .message-wrapper {
     display: flex;
@@ -44,10 +50,12 @@ const CovidMessageStyles = styled.div`
     font-size: 0.875rem;
     span {
       text-decoration: underline;
+      cursor: pointer;
     }
   }
 
   .message-exit {
+    cursor: pointer;
     font-size: 16px;
   }
 `

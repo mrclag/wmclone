@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import {numberWithCommas} from '../../utils/helpers'
 
@@ -14,14 +14,19 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({brand}) => {
+  const [liked, setLiked] = useState(brand.liked)
   console.log(brand)
   return (
     <CardStyles>
       <div className="card">
         <div className="image-container">
           <img src={brand.image} alt=""/>
-          <div className="like-button">
-            <i className="fas fa-heart"/>
+          <div className="like-button" onClick={()=>setLiked(!liked)}>
+            {liked ?
+              <i className="fas fa-heart" style={{color: 'red'}}/> 
+                :
+              <i className="far fa-heart"  style={{color: '#aaa'}}></i>
+            }
           </div>
         </div>
         <div className="card-title">{brand.name}</div>
@@ -54,6 +59,7 @@ const CardStyles = styled.div`
       right: 8px;
       padding: 8px;
       border-radius: 50%;
+      cursor: pointer;
       border: 1px solid #aaa;
       background: white;
       display: flex;

@@ -155,8 +155,14 @@ const NavbarStyles = styled.div`
       font-size: 14px;
       color: rgb(104, 104, 104);
       padding: 0px 12px 0px 4px;
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(0, 168, 163);
+      }
     }
     .navlinkbutton {
+      cursor: pointer;
       font-size: 14px;
       color: white;
       background: rgb(0, 168, 163);
@@ -171,6 +177,7 @@ const NavbarStyles = styled.div`
     font-size: 20px;
     color: #4a4a4a;
     .fas {
+      cursor: pointer;
       padding: 10px;
     }
     .fa-user {
@@ -178,8 +185,13 @@ const NavbarStyles = styled.div`
       width: 18px;
       height: 18px;
       margin: 10px;
+	    transition: all 300ms ease 0s;
       border: 1px solid #4a4a4a;
       border-radius: 50%;
+      &:hover {
+        color: #818181;
+        border-color: #818181;
+      }
     }
   }
 `
