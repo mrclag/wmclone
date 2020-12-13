@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import stiiizypen from '../../img/products/stiizypen.jpg'
 
 interface Subcategory {
   name: string,

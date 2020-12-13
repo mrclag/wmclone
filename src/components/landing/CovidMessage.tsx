@@ -8,7 +8,7 @@ interface CovidMessageStyleProps {
   display: boolean;
 }
 
-export const CovidMessage: React.FC<CovidMessageProps> = ({}) => {
+export const CovidMessage: React.FC<CovidMessageProps> = () => {
   const [display, setDisplay] = useState(true)
 
   return (

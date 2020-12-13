@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link, RouteComponentProps, withRouter } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -15,8 +15,6 @@ interface NavLinkStyleProps {
 
 const NavLink: React.FC<NavLinkProps & RouteComponentProps> = ({name, url}) => {
   const selected = url === window.location.pathname
-
-  useEffect(()=>{},[window.location.pathname])
 
   return (
     <NavLinkStyles selected={selected}>

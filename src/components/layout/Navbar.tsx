@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import logo from '../../img/logo.png'
 import { Link } from 'react-router-dom'
@@ -9,8 +9,8 @@ interface NavbarProps {
 
 }
 
-export const Navbar: React.FC<NavbarProps> = ({}) => {
-  const [showProductDropdown, setShowProductDropdown] = useState(false)
+export const Navbar: React.FC<NavbarProps> = () => {
+  // const [showProductDropdown, setShowProductDropdown] = useState(false)
 
   return (
     <NavbarStyles>

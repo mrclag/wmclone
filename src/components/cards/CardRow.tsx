@@ -10,7 +10,7 @@ interface CardRowProps {
 
 }
 
-export const CardRow: React.FC<CardRowProps> = ({}) => {
+export const CardRow: React.FC<CardRowProps> = () => {
   return (
     <CardRowStyles>
       <div className="cardrow">

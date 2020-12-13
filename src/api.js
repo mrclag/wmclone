@@ -102,6 +102,8 @@ export const brands = [
 export const deliveryServices = [
   {
     name: "STIIIZY",
+    latitude: '',
+    longitude: '',
     location: 'San Francisco, California',
     distance: '2 mi',
     liked: true,

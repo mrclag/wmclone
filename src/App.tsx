@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { Landing } from './components/landing/Landing'
 import { Navbar } from './components/layout/Navbar';
 import styled from 'styled-components';
-import { CovidMessage } from './components/landing/CovidMessage';
 import Products from './components/products/Products';
+import Dispensaries from './components/dispensaries/Dispensaries';
 
 function App() {
   return (
@@ -14,6 +13,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/products" component={Products} />
+        <Route exact path="/dispensaries" component={Dispensaries} />
       </Switch>
     </AppStyles>
   );

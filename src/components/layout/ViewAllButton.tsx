@@ -5,7 +5,7 @@ interface ViewAllButtonProps {
 
 }
 
-const ViewAllButton: React.FC<ViewAllButtonProps> = ({}) => {
+const ViewAllButton: React.FC<ViewAllButtonProps> = () => {
   return (
     <ViewAllButtonStyles className="cardrow__button">
       <div>

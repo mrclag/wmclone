@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { categories } from '../../api'
 import ProductCategoryRow from './ProductCategoryRow'
@@ -10,7 +10,7 @@ interface ProductsProps {
 
 }
 
-const Products: React.FC<ProductsProps> = ({}) => {
+const Products: React.FC<ProductsProps> = () => {
 
   return (
     <ProductsStyles>

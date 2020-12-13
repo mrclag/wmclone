@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import ViewAllButton from '../layout/ViewAllButton'
-
-import {brands} from '../../api'
 import ProductSubcategory from './ProductSubcategory'
 
 interface Subcategory {

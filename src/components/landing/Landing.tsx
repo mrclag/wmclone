@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { CardRow } from '../cards/CardRow'
 import Carousel from '../Carousel'
@@ -10,7 +10,7 @@ interface LandingProps {
 }
 
 
-export const Landing: React.FC<LandingProps> = ({}) => {
+export const Landing: React.FC<LandingProps> = () => {
 
   return (
     <LandingStyles>
