@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import logo from '../../img/logo.png'
 import { Link } from 'react-router-dom'
-import {navLinks} from '../../api'
+import {navLinks} from '../../data/api'
 import NavLink from './NavLink'
 
 interface NavbarProps {

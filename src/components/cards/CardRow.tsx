@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import ViewAllButton from '../layout/ViewAllButton'
 import Card from './Card'
 
-import {brands} from '../../api'
+import {brands} from '../../data/api'
 
 interface CardRowProps {
 
