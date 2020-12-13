@@ -15,7 +15,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({brand}) => {
   const [liked, setLiked] = useState(brand.liked)
-  console.log(brand)
+  
   return (
     <CardStyles>
       <div className="card">

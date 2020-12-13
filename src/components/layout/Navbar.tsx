@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import logo from '../../img/logo.png'
+import { Link } from 'react-router-dom'
+import {navLinks} from '../../api'
+import NavLink from './NavLink'
 
 interface NavbarProps {
 
 }
 
 export const Navbar: React.FC<NavbarProps> = ({}) => {
+  const [showProductDropdown, setShowProductDropdown] = useState(false)
+
   return (
     <NavbarStyles>
       <div className="nav-wrapper">
-        <div className="logo">
+        <Link to='/' className="logo">
           <img src={logo} alt=""/>
-        </div>
+        </Link>
         <div className="navcontent">
           <div className="nav-top">
+
+            {/* Search bars */}
             <div className="searchbars">
               <div className="searchbar">
               <div className="searchbar__product">
@@ -30,23 +37,19 @@ export const Navbar: React.FC<NavbarProps> = ({}) => {
                 </div>
               </div>
             </div>
-            
+
+            {/* User actions */}
             <div className="user-actions">
               <i className="fas fa-bell"></i>
               <i className="fas fa-shopping-cart"></i>
               <i className="fas fa-user"></i>
             </div>
           </div>
+
+          {/* Navigation Links */}
           <div className="nav-bottom">
             <div className="navigation">
-              <span className="navlink">Dispensaries</span>
-              <span className="navlink">Deliveries</span>
-              <span className="navlink">Maps</span>
-              <span className="navlink">Brands</span>
-              <span className="navlink">Products</span>
-              <span className="navlink">Deals</span>
-              <span className="navlink">Learn</span>
-              <span className="navlink">Strains</span>
+              {navLinks && navLinks.map((navLink)=> <NavLink name={navLink.name} url={navLink.url}/>)}
               <span className="navlinkbutton">Order online</span>
             </div>
           </div>
@@ -61,6 +64,9 @@ const NavbarStyles = styled.div`
   border-bottom: 1px solid #ebeaea;
   width: 100%;
   margin: 0 auto;
+  position: fixed;
+  z-index: 20;
+  background: white;
 
   .nav-wrapper {
     display: flex;
@@ -151,16 +157,6 @@ const NavbarStyles = styled.div`
     align-items: center;
     
 
-    .navlink {
-      font-size: 14px;
-      color: rgb(104, 104, 104);
-      padding: 0px 12px 0px 4px;
-      cursor: pointer;
-
-      &:hover {
-        color: rgb(0, 168, 163);
-      }
-    }
     .navlinkbutton {
       cursor: pointer;
       font-size: 14px;
@@ -169,6 +165,7 @@ const NavbarStyles = styled.div`
       border-radius: 0.875rem;
       padding: 0.25rem 0.75rem;
     }
+    
   }
 
 

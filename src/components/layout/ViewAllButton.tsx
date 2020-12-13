@@ -20,13 +20,13 @@ export default ViewAllButton
 
 const ViewAllButtonStyles = styled.div`
 	box-sizing: border-box;
-	color: #333;
+	color: #666;
   cursor: pointer;
 	text-decoration: none;
 	-webkit-box-align: center;
 	align-items: center;
 	background: white;
-	border: 0.0625rem solid #aaa;
+	border: 0.0625rem solid #ddd;
 	border-radius: 0.25rem;
 	display: inline-flex;
 	justify-content: space-around;
