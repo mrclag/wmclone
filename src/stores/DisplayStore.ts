@@ -1,10 +1,12 @@
 import { createContext } from "react"
 
+import {brands} from '../data/api'
 
 interface IStore {
   name: string,
   count: number,
   displayCovidMessage: boolean,
+  brands: {},
   inc: () => void,
   exitCovidMessage: () => void,
 }
@@ -15,6 +17,8 @@ export const createStore = () => {
     name: 'Mobx Example',
     count: 0,
     displayCovidMessage: true,
+    brands: brands,
+    
 
     inc(){
       this.count += 1

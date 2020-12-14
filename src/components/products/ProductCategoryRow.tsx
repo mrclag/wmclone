@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ViewAllButton from '../layout/ViewAllButton'
+import ViewAllButton from '../buttons/ViewAllButton'
 import ProductSubcategory from './ProductSubcategory'
 
 interface Subcategory {

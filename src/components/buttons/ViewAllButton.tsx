@@ -6,6 +6,7 @@ interface ViewAllButtonProps {
 }
 
 const ViewAllButton: React.FC<ViewAllButtonProps> = () => {
+	
   return (
     <ViewAllButtonStyles className="cardrow__button">
       <div>
@@ -19,6 +20,7 @@ const ViewAllButton: React.FC<ViewAllButtonProps> = () => {
 export default ViewAllButton
 
 const ViewAllButtonStyles = styled.div`
+	margin-left: 0.5rem;
 	box-sizing: border-box;
 	color: #666;
   cursor: pointer;

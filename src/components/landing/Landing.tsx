@@ -12,10 +12,12 @@ export const Landing: React.FC<LandingProps> = () => {
     <LandingStyles>
       <CovidMessage/>
       <Carousel/>
-      <CardRow/>
-      <CardRow/>
-      <CardRow/>
-      <CardRow/>
+      <CardRow type="Featured brands" buttons={{viewAll: true}}/>
+      <CardRow type="Dispensary services" buttons={{viewAll: true, map: true}}/>
+      <CardRow type="Delivery services" buttons={{viewAll: true, leftright: true}}/>
+      <CardRow type="Dispensary storefronts" buttons={{viewAll: true}}/>
+      <CardRow type="Deals nearby" buttons={{viewAll: true}}/>
+      <CardRow type="Doctors" buttons={{viewAll: true}}/>
     </LandingStyles>
   )
 }

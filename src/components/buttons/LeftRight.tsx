@@ -19,15 +19,19 @@ const LeftRight: React.FC<LeftRightProps> = ({}) => {
 export default LeftRight
 
 const LeftRightStyles = styled.div`
+    display: inline-flex;
+    margin-left: 0.5rem;
+    vertical-align: bottom;
     .next,
     .prev {
         background: white;
-        box-sizing: border-box;
-        align-items: center;
-        border: 0.0625rem solid rgb(221, 221, 221);
-        border-radius: 0.25rem;
         display: inline-flex;
         justify-content: space-around;
+        align-items: center;
+        color: rgb(51, 51, 51);
+        font-size: 14px;
+        border: 0.0625rem solid rgb(221, 221, 221);
+        border-radius: 0.25rem;
         position: relative;
         height: 2.5rem;
         width: 2.75rem;

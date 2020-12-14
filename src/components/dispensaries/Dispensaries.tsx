@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Mapbox from './Mapbox'
-import PillButton from './PillButton'
+import PillButton from '../buttons/PillButton'
 
 interface DispensariesProps {}
 

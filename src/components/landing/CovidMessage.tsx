@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext} from 'react'
 import styled from 'styled-components'
 import { StoreContext } from '../../stores/DisplayStore'
 import { useObserver } from "mobx-react-lite"
@@ -15,9 +15,6 @@ const CovidMessage: React.FC<CovidMessageProps> = () => {
   const store = useContext(StoreContext)
   if(store === null) throw new Error()
 
-  const increment = () => {
-    store.inc()
-  }
 
 
   return useObserver(()=>(
@@ -47,6 +44,7 @@ const CovidMessageStyles = styled.div`
 
   .message-wrapper {
     display: flex;
+    padding-left: 0.5rem;
     flex-direction: row;
     height: 100%;
     max-width: 75rem;
