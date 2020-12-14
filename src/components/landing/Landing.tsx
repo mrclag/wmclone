@@ -5,13 +5,9 @@ import Carousel from '../Carousel'
 import { CovidMessage } from './CovidMessage'
 
 
-interface LandingProps {
-
-}
-
+interface LandingProps {}
 
 export const Landing: React.FC<LandingProps> = () => {
-
   return (
     <LandingStyles>
       <CovidMessage/>
@@ -23,8 +19,6 @@ export const Landing: React.FC<LandingProps> = () => {
     </LandingStyles>
   )
 }
-
-
 
 
 const LandingStyles = styled.div`

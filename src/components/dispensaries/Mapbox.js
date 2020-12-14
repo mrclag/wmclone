@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import { dispensariesData } from '../../data/dispensaries.js'
-import iconmarker from '../../img/icon-marker.png'
+import iconmarker from '../../img/weedpin.png'
 import styled from 'styled-components'
+import cardimg from '../../img/cardimg2.jpg'
+import LeftRight from '../buttons/LeftRight'
 
 const Mapbox = () => {
   const [viewport, setViewport] = useState({
@@ -15,7 +17,6 @@ const Mapbox = () => {
 
   const [selectedMarker, setSelectedMarker] = useState(null)
 
-  console.log(process.env.REACT_APP_MAPBOX_TOKEN)
   return (
     <MapBoxStyles>
       <ReactMapGL 
@@ -29,7 +30,7 @@ const Mapbox = () => {
             <img src={iconmarker}  onClick={e=> {
                 e.preventDefault()
                 setSelectedMarker(dispensary)
-              }}  alt=""/>
+              }} className='marker' alt="marker"/>
           </Marker>
         ))}
 
@@ -38,7 +39,10 @@ const Mapbox = () => {
             <div>This is a marker.</div>
           </Popup>
         ) : null}
-        <div className='results'>
+      </ReactMapGL>
+
+      {/* Map results box */}
+      <div className='results'>
           <div className="results__header">
             <div className="results__header-title">Showing results 1-61</div>
             <div className="results__header-sort">
@@ -80,7 +84,39 @@ const Mapbox = () => {
             ))}
           </div>
         </div>
-      </ReactMapGL>
+
+        {/* Deals */}
+        <div className="deals-wrapper">
+          <div className="deals-nav">
+            <LeftRight/>
+          </div>
+          <div className="deals-box">
+            <div className="deal">
+              <div className="deal-image">
+                <img src={cardimg} alt=""/>
+              </div>
+              <div className='deal-content'>
+                <div className="producttype">Storewide</div>
+                <div className="title">BUY 3 GET ONE FREE MIX + MATCH</div>
+                <div className="company">Good Tree</div>
+                <div className="locationtype">
+                  <i className="fas fa-car"/> Delivery
+                </div>
+                <div className="licensetype">Medical + Recreational</div>
+                <div className="rating">
+                  <i className="fas fa-star"/>
+                  <i className="fas fa-star"/>
+                  <i className="fas fa-star"/>
+                  <i className="fas fa-star"/>
+                  <i className="fas fa-star"/>
+                  <span className='avg-rating'>{' '}4.8</span>
+                  <span className='num-ratings'>{' '}(162)</span>
+                </div>
+              </div>
+              <div className="num_ratings">Medical + Recreational</div>
+            </div>
+          </div>
+        </div>
     </MapBoxStyles>
   )
 }
@@ -91,15 +127,17 @@ export default Mapbox
 const MapBoxStyles = styled.div`
   position: relative;
   width: 100%;
-  img {
+  .marker {
     cursor: pointer;
-    height: 26px;
+    height: 40px;
     transition: all .2s ease-in-out;
 
     &:hover {
       transform: scale(1.4);
     }
   }
+
+  
 
   .results {
     background: white;
@@ -153,6 +191,8 @@ const MapBoxStyles = styled.div`
       height: 200px;
       width: 100%;
       border-bottom: 1px solid #ddd;
+      z-index: 10;
+      cursor: pointer;
       
 
       img {
@@ -246,6 +286,97 @@ const MapBoxStyles = styled.div`
 
           &:hover {
             color: #00A8A3;
+          }
+        }
+      }
+    }
+  }
+  .deals-wrapper {
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    bottom: 2rem;
+    border-radius: 4px;
+    right: 2rem;
+    overflow: hidden;
+    transform: none !important;
+    z-index: 30;
+
+    .deals-nav {
+      padding-bottom: 0.5rem;
+      display: flex;
+      width: 100%;
+      margin-right: auto;
+      
+      .next-deal,
+      .prev-deal {
+        background: white;
+        box-sizing: border-box;
+        align-items: center;
+        border: 0.0625rem solid rgb(221, 221, 221);
+        border-radius: 0.25rem;
+        display: inline-flex;
+        justify-content: space-around;
+        position: relative;
+        height: 2.5rem;
+        width: 2.75rem;
+        z-index: 30;
+        cursor: pointer;
+        user-select: none;
+      }
+      .prev-deal {
+
+      }
+
+    }
+    .deals-box {
+      background: white;
+      border-radius: 0px 0px 5px 5px;
+      height: 100%;
+
+      .deal {
+
+        .deal-image {
+          img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+
+        .deal-content {
+          padding: 5px;
+          display: flex;
+          flex-direction: column;
+          line-height: 1.25rem;
+        }
+
+        .producttype,
+        .company,
+        .locationtype,
+        .licensetype,
+        .rating {
+          color: #60646F;
+          font-size: 14px;
+        }
+        .title {
+          font-size: 16px;
+          color: #252935;
+          height: 40px;
+          font-weight: bold;
+          text-overflow: ellipsis;
+          overflow-wrap: break-word;
+          max-width: 100%;
+          min-height: 2.5rem;
+        }
+        .company {}
+        .locationtype {
+
+        }
+        .licensetype {}
+        .rating {
+          .fas {
+            color: #f5ab24;
           }
         }
       }

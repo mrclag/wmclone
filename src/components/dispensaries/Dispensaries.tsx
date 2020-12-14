@@ -3,14 +3,10 @@ import styled from 'styled-components'
 import Mapbox from './Mapbox'
 import PillButton from './PillButton'
 
-interface DispensariesProps {
-
-}
-
+interface DispensariesProps {}
 
 const Dispensaries: React.FC<DispensariesProps> = () => {
-  const filterButtons = ['Order online', 'Open now', 'Curbside Pickup', 'Storefronts', 'Delivery', 'CBD Stores', 'Doctors']
-  
+
   return (
     <DispensariesStyles>
       <div className="dispensary-controls">
@@ -44,6 +40,7 @@ const Dispensaries: React.FC<DispensariesProps> = () => {
       </div>
       
       <Mapbox/>
+      
     </DispensariesStyles>
   )
 }
