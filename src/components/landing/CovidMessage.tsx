@@ -1,5 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
+import { StoreContext } from '../../stores/DisplayStore'
+import { useObserver } from "mobx-react-lite"
+
 
 
 interface CovidMessageProps {
@@ -8,25 +11,32 @@ interface CovidMessageStyleProps {
   display: boolean;
 }
 
-export const CovidMessage: React.FC<CovidMessageProps> = () => {
-  const [display, setDisplay] = useState(true)
+const CovidMessage: React.FC<CovidMessageProps> = () => {
+  const store = useContext(StoreContext)
+  if(store === null) throw new Error()
 
-  return (
-    <CovidMessageStyles display={display}>
+  const increment = () => {
+    store.inc()
+  }
+
+
+  return useObserver(()=>(
+    <CovidMessageStyles display={store.displayCovidMessage}>
       <div className="message-wrapper">
        <div className="message">
         <strong>COVID-19</strong>:{' '}
         <span>
           stay safe by ordering online for delivery or curbside pickup, where available.
-        </span>
+        </span>{store.count}
        </div>
-       <div className="message-exit" onClick={()=> setDisplay(false)}>
+       <div className="message-exit" onClick={store.exitCovidMessage}>
          <i className="fas fa-times"/>
        </div>
       </div>
     </CovidMessageStyles>
-  )
+  ))
 }
+export default CovidMessage
 
 const CovidMessageStyles = styled.div`
   height: 50px;

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { CardRow } from '../cards/CardRow'
 import Carousel from '../Carousel'
-import { CovidMessage } from './CovidMessage'
+import CovidMessage from './CovidMessage'
 
 
 interface LandingProps {}

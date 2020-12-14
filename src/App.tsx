@@ -5,17 +5,24 @@ import { Navbar } from './components/layout/Navbar';
 import styled from 'styled-components';
 import Products from './components/products/Products';
 import Dispensaries from './components/dispensaries/Dispensaries';
+import { StoreContext, createStore } from './stores/DisplayStore';
+import {useLocalStore} from 'mobx-react-lite'
 
 function App() {
+
+  const store = useLocalStore(createStore)
+
   return (
-    <AppStyles>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route exact path="/products" component={Products} />
-        <Route exact path="/dispensaries" component={Dispensaries} />
-      </Switch>
-    </AppStyles>
+    <StoreContext.Provider value={store}>
+      <AppStyles>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/products" component={Products} />
+          <Route exact path="/dispensaries" component={Dispensaries} />
+        </Switch>
+      </AppStyles>
+    </StoreContext.Provider>
   );
 }
 
