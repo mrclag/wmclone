@@ -24,6 +24,7 @@ const Mapbox = () => {
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
         onViewportChange={(viewport)=>{setViewport(viewport)}}
         mapStyle='mapbox://styles/mattclagett/ckimqd3c41bhj17od32owf4mm'
+        // mapStyle='mapbox://styles/mattclagett/ckiq9hii50qs118ofydqec3py' dark mode
       >
         {dispensariesData.map((dispensary) => (
           <Marker key={dispensary.id} latitude={dispensary.latitude} longitude={dispensary.longitude}>

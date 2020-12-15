@@ -24,7 +24,7 @@ const CovidMessage: React.FC<CovidMessageProps> = () => {
         <strong>COVID-19</strong>:{' '}
         <span>
           stay safe by ordering online for delivery or curbside pickup, where available.
-        </span>{store.count}
+        </span>
        </div>
        <div className="message-exit" onClick={store.exitCovidMessage}>
          <i className="fas fa-times"/>

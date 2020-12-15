@@ -34,7 +34,7 @@ export const CardRow: React.FC<CardRowProps> = ({type, buttons}) => {
             {buttons.viewAll && <ViewAllButton/>}
             {buttons.leftright && <LeftRight/>}
           </div>
-        </div>
+        </div> 
         <div className="cardrow__content">
           {type === "Featured brands" && brands.map((brand)=><Card brand={brand}/>)}
           {type === "Dispensary services" && dispensaries.slice(0,5).map((dispensary)=><DispensaryCard dispensary={dispensary}/>)}

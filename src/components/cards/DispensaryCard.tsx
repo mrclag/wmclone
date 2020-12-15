@@ -30,6 +30,7 @@ const Card: React.FC<CardProps> = ({dispensary}) => {
         </div>
         <div className="locations">
           <span>{dispensary.location}</span>
+          <span>{' '}|{' '}</span>
           <span>{dispensary.distance}</span>
         </div>
         <div className="card-title">{dispensary.name}</div>

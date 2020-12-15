@@ -4,6 +4,7 @@ import { dispensariesData } from '../../data/dispensaries'
 import PillButton from '../buttons/PillButton'
 import DispensaryCard from '../cards/DispensaryCard'
 import Delivery from './Delivery'
+import DeliveryPickup from './DeliveryPickup'
 
 interface DeliveriesProps {
 
@@ -12,6 +13,21 @@ interface DeliveriesProps {
 interface DeliveryStyleProps {
   openTab: string
 }
+
+const deliveryFilters = (<>
+  <PillButton text="Order online"/>
+  <PillButton text="Open now"/>
+  <PillButton text="Medical only"/>
+  <PillButton text="Recreational only"/></>)
+
+const pickupFilters = (
+  <>
+    <PillButton text="Order online"/>
+    <PillButton text="Open now"/>
+    <PillButton text="Medical only"/>
+    <PillButton text="Recreational only"/>
+  </>
+)
 
 const Deliveries: React.FC<DeliveriesProps> = () => {
   const [openTab, setOpenTab] = useState("delivery")
@@ -30,53 +46,15 @@ const Deliveries: React.FC<DeliveriesProps> = () => {
       </div>
 
 
-    
-      <div className="deliveries-wrapper">
+      {openTab === 'delivery' ? (
+        <DeliveryPickup type='delivery'/>
+      ) : (
+        <DeliveryPickup type='pickup'/>
+      )}
 
-        <div className='filters'>
-          <PillButton text="Order online"/>
-          <PillButton text="Open now"/>
-          <PillButton text="Medical only"/>
-          <PillButton text="Recreational only"/>
-        </div>
 
-        <div className="results-title">
-          Showing results for 
-          <strong>
-            {' '}San Francisco, CA
-          </strong>
-        </div>
+        {/* I want to create the same page, render different search navigation */}
 
-        <div className="featured-content">
-          <div className="featured-header">Featured</div>
-          <div className="featured-slider">
-            {dispensariesData.slice(0,5).map((dispensary)=>(
-              <DispensaryCard dispensary={dispensary} />
-            ))}
-          </div>
-        </div>
-
-        <div className="deliveries-results-wrapper">
-          <div className="sort-results">
-            <span className='sort-by'>Sort by</span>
-            <span className='recommended-dropdown'>
-              <div className="button">
-                Recommended{' '}<i className="fas fa-caret-down"></i>
-              </div>
-            </span>
-          </div>
-          <div className="deliveries-results">
-            <div className="delivery">
-              <div className="delivery-content">
-                <Delivery/>
-                <Delivery/>
-                <Delivery/>
-                <Delivery/>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       
     </DeliveriesStyles>
   )
@@ -129,12 +107,11 @@ const DeliveriesStyles = styled.div`
     box-sizing: border-box;
     font-weight: 400;
     margin: 0px;
-    text-rendering: optimizelegibility;
-    font-family: circular, -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
     padding: 0px;
     padding-top: 24px;
     font-size: 20px;
     line-height: 1.5rem;
+    color: #333;
   }
 
   .featured-content {
@@ -168,6 +145,7 @@ const DeliveriesStyles = styled.div`
 
       .recommended-dropdown {
         margin-left: 5px;
+        cursor: pointer;
         .button {
           color: rgb(1, 168, 163);
           font-weight: bold;

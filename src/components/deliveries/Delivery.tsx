@@ -19,10 +19,10 @@ const Delivery: React.FC<DeliveryProps> = ({}) => {
             <div className="type">Medical + Recreational</div>
             <div className="requirements">
               <span>Free Delivery</span>
-              <span>*</span>
+              <span>{' '}•{' '}</span>
               <span>$35 minimum</span>
             </div>
-            <div className="rating"><i className="fas fa-star">4.5 (201)</i></div>
+            <div className="rating"><i className="fas fa-star"/>{' '}4.5 (201)</div>
             <div className="tags">
               <div className="tag">
                 Order online
@@ -31,6 +31,8 @@ const Delivery: React.FC<DeliveryProps> = ({}) => {
           </div>
         </div>
         <div className="menu-details">
+
+          {/* Details */}
           <div className="menu-breakdown">
             <div className="breakdown-title">
               <span>
@@ -42,22 +44,22 @@ const Delivery: React.FC<DeliveryProps> = ({}) => {
             </div>
             <div className="breakdown">
               <div className="breakdown-item">
-                <i className="fas fa-leaf"></i>
+                <i className="fas fa-spa"></i>
                 <div className="category">Concentrates</div>
                 <div className="num-items">(28 items)</div>
               </div>
               <div className="breakdown-item">
-                <i className="fas fa-leaf"></i>
+                <i className="fas fa-cookie"></i>
                 <div className="category">Edibles</div>
                 <div className="num-items">(28 items)</div>
               </div>
               <div className="breakdown-item">
-                <i className="fas fa-leaf"></i>
+                <i className="fas fa-tree"></i>
                 <div className="category">Flower</div>
                 <div className="num-items">(28 items)</div>
               </div>
               <div className="breakdown-item">
-                <i className="fas fa-leaf"></i>
+                <i className="fas fa-pen-fancy"></i>
                 <div className="category">Vape Pens</div>
                 <div className="num-items">(28 items)</div>
               </div>
@@ -68,6 +70,35 @@ const Delivery: React.FC<DeliveryProps> = ({}) => {
               </div>
             </div>
           </div>
+
+          <div className="menu-genetics">
+            <div className="genetics-title">Menu Genetics</div>
+            <div className="genetics-type">
+              <span className='gen-title'>
+                Hybrid
+              </span>
+              <span className='gen-num'>
+                {' '}(562 items)
+              </span>
+            </div>
+            <div className="genetics-type">
+              <span className='gen-title'>
+                Indica
+              </span>
+              <span className='gen-num'>
+              {' '}(155 items)
+              </span>
+            </div>
+            <div className="genetics-type">
+              <span className='gen-title'>
+                Hybrid
+              </span>
+              <span className='gen-num'>
+              {' '}(99 items)
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
     </DeliveryStyles>
@@ -87,6 +118,8 @@ const DeliveryStyles = styled.div`
   .delivery-content {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
   }
   
   .delivery-left {
@@ -113,6 +146,21 @@ const DeliveryStyles = styled.div`
         height: 4rem;
       }
     }
+
+    .basic-info {
+      line-height: 1.25rem;
+
+      .company-name {
+        font-size: 16px;
+        color: #252935;
+        font-weight: bold;
+      }
+      .type,
+      .requirements {
+        color: #60646F;
+        font-size: 14px
+      }
+    }
     .rating {
       font-weight: 400;
       font-size: 14px;
@@ -121,6 +169,9 @@ const DeliveryStyles = styled.div`
       display: inline-block;
       max-width: 100%;
       text-overflow: ellipsis;
+      i {
+        color: #f5ab24;
+      }
     }
     
     .tags {
@@ -144,7 +195,8 @@ const DeliveryStyles = styled.div`
   .menu-details {
     display: flex;
     flex-direction: row;
-    padding: 0px 1rem 0px 5rem;
+    justify-content: space-between;
+    padding: 0px 5rem 0px 5rem;
     background-color: rgb(255, 255, 255);
     width: 100%;
   }
@@ -183,6 +235,26 @@ const DeliveryStyles = styled.div`
     .num-items {
       font-size: 14px;
       color: #60646F;
+    }
+  }
+
+  .menu-genetics{
+    line-height: 1.25rem;
+
+    .genetics-title {
+      font-weight: bold;
+      color: #252935;
+      font-size: 16px;
+    }
+    .genetics-type {
+      font-weight: 400;
+      color: #60646F;
+      font-size: 14px;
+      
+      .gen-title {
+        color: #252935;
+        font-size: 16px;
+      }
     }
   }
 `
