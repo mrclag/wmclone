@@ -81,7 +81,6 @@ const ProductCategoryRowStyles = styled.div`
     flex-direction: row;
     justify-content: space-between;
     display: grid;
-    overflow: auto;
     grid-template-columns: repeat(5, 1fr);
   }
 `
