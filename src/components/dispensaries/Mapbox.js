@@ -303,6 +303,8 @@ const MapBoxStyles = styled.div`
     transform: none !important;
     z-index: 30;
 
+    
+
     .deals-nav {
       padding-bottom: 0.5rem;
       display: flex;

@@ -24,10 +24,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
             {/* Search bars */}
             <div className="searchbars">
               <div className="searchbar">
-              <div className="searchbar__product">
-                <i className="fas fa-search"></i>
-                <input type="text" placeholder='Products, retailers, brands, and more'/>
-              </div>
+                <div className="searchbar__product">
+                  <i className="fas fa-search"></i>
+                  <input type="text" placeholder='Products, retailers, brands, and more'/>
+                </div>
               </div>
               <hr/>
               <div className="searchbar">

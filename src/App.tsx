@@ -9,6 +9,7 @@ import { StoreContext, createStore } from './stores/DisplayStore';
 import {useLocalStore} from 'mobx-react-lite'
 import Deliveries from './components/deliveries/Deliveries';
 import Deals from './components/deals/Deals';
+import Brands from './components/brands/Brands';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/dispensaries" component={Dispensaries} />
           <Route exact path="/deliveries" component={Deliveries} />
           <Route exact path="/maps" component={Dispensaries} />
+          <Route exact path="/brands" component={Brands} />
           <Route exact path="/deals" component={Deals} />
         </Switch>
       </AppStyles>
