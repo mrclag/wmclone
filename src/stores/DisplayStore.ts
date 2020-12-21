@@ -1,6 +1,6 @@
 import { createContext } from "react"
 
-import {brands} from '../data/api'
+import {brands} from '../data/brands'
 
 interface IStore {
   name: string,

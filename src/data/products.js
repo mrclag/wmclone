@@ -1,9 +1,3 @@
-import cardimg1 from '../img/cardimg.jpg'
-import cardimg2 from '../img/cardimg2.jpg'
-import cardimg3 from '../img/cardimg3.jpg'
-import cardimg4 from '../img/cardimg4.jpg'
-import cardimg5 from '../img/cardimg5.png'
-
 import vape from '../img/categories/vape.jpg'
 import flower from '../img/categories/flower.jpg'
 import cbd from '../img/categories/cbd.jpg'
@@ -65,51 +59,6 @@ import lubricantsoils from '../img/products/lubricantsoils.jpg'
 import patches from '../img/products/patches.jpg'
 import sprays from '../img/products/sprays.jpg'
 
-
-export const brands = [
-  {
-    name: "STIIIZY",
-    followers: 75532,
-    liked: true,
-    image: cardimg1
-  },
-  {
-    name: "Good Tree",
-    followers: 969,
-    liked: false,
-    image: cardimg2
-  },
-  {
-    name: "Smoakland",
-    followers: 75532,
-    liked: false,
-    image: cardimg3
-  },
-  {
-    name: "Zips Weeds Co",
-    followers: 75532,
-    liked: false,
-    image: cardimg4
-  },
-  {
-    name: "Medcare Farms",
-    followers: 75532,
-    liked: true,
-    image: cardimg5
-  },
-]
-
-export const deliveryServices = [
-  {
-    name: "STIIIZY",
-    latitude: '',
-    longitude: '',
-    location: 'San Francisco, California',
-    distance: '2 mi',
-    liked: true,
-    image: cardimg1
-  },
-]
 
 export const categories = [
   {
@@ -369,41 +318,5 @@ export const categories = [
         image: preroll2
       }
     ]
-  }
-]
-
-
-export const navLinks = [
-  {
-    name: "Dispensaries",
-    url: '/dispensaries'
-  },
-  {
-    name: "Deliveries",
-    url: '/deliveries'
-  },
-  {
-    name: "Maps",
-    url: '/maps'
-  },
-  {
-    name: "Brands",
-    url: '/brands'
-  },
-  {
-    name: "Products",
-    url: '/products'
-  },
-  {
-    name: "Deals",
-    url: '/deals'
-  },
-  {
-    name: "Learn",
-    url: '/learn'
-  },
-  {
-    name: "Strains",
-    url: '/strains',
   }
 ]

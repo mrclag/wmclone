@@ -6,7 +6,7 @@ import DispensaryCard from './DispensaryCard'
 import ViewAllButton from '../buttons/ViewAllButton'
 import MapButton from '../buttons/MapButton'
 
-import {brands} from '../../data/api'
+import {brands} from '../../data/brands'
 import {dispensariesData as dispensaries} from '../../data/dispensaries'
 import LeftRight from '../buttons/LeftRight'
 

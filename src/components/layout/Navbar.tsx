@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import styled from 'styled-components'
 import logo from '../../img/logo.png'
 import { Link } from 'react-router-dom'
-import {navLinks} from '../../data/api'
+import {navLinks} from '../../data/links'
 import NavLink from './NavLink'
+import useOnClickOutside from '../../utils/useOnClickOutside'
 
 interface NavbarProps {
 
@@ -12,8 +13,17 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = () => {
   // const [showProductDropdown, setShowProductDropdown] = useState(false)
 
+  const [openDropdown, setOpenDropdown] = useState(false)
+
+  const searchBarRef = useRef<HTMLDivElement>(null)
+  
+  useOnClickOutside(searchBarRef, () => {
+    if (openDropdown) {
+      setOpenDropdown(false);
+    }
+  });
   return (
-    <NavbarStyles>
+    <NavbarStyles openDropdown={openDropdown}>
       <div className="nav-wrapper">
         <Link to='/' className="logo">
           <img src={logo} alt=""/>
@@ -22,12 +32,13 @@ export const Navbar: React.FC<NavbarProps> = () => {
           <div className="nav-top">
 
             {/* Search bars */}
-            <div className="searchbars">
+            <div ref={searchBarRef} className="searchbars">
               <div className="searchbar">
                 <div className="searchbar__product">
                   <i className="fas fa-search"></i>
-                  <input type="text" placeholder='Products, retailers, brands, and more'/>
+                  <input onClick={()=>setOpenDropdown(true)} type="text" placeholder='Products, retailers, brands, and more'/>
                 </div>
+                <div className="search__dropdown">DROPDOWN</div>
               </div>
               <hr/>
               <div className="searchbar">
@@ -57,6 +68,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
       </div>
     </NavbarStyles>
   )
+}
+
+interface NavbarStylesProps {
+  openDropdown: boolean
 }
 
 const NavbarStyles = styled.div`
@@ -98,9 +113,22 @@ const NavbarStyles = styled.div`
     height: 34px;
     overflow: hidden;
     background: #eee;
+    border: 0.0625rem solid #eee;
+
+    ${(props: NavbarStylesProps) => props.openDropdown && (
+      'background: white;' +
+      'border: 0.0625rem solid rgb(204, 204, 204);'
+    )}
+    /* background: white;
+    border: 0.0625rem solid rgb(204, 204, 204); */
 
     .searchbar {
       width: 49%;
+
+      .search__dropdown{
+        z-index: 30;
+        background: white;
+      }
     }
 
     hr {
@@ -183,8 +211,8 @@ const NavbarStyles = styled.div`
       height: 18px;
       margin: 10px;
 	    transition: all 300ms ease 0s;
-      border: 1px solid #4a4a4a;
-      border-radius: 50%;
+      /* border: 1px solid #4a4a4a; */
+      /* border-radius: 50%; */
       &:hover {
         color: #818181;
         border-color: #818181;

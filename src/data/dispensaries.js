@@ -13,7 +13,10 @@ export const dispensariesData = [
     numRatings: 629,
     image: elevatedsf,
     types: ["Dispensary", "Recreational"],
-    tags: ["Closed", "Order online", "Curbside pickup"],
+    // open: true / false
+    // hours: [[]]
+    // 
+    tags: ["Closed", "Order online", "Curbside pickup"], // if there is "Order Online", then show the View menu button
     latitude: 37.752839,
     longitude: -122.474971,
     location: 'San Francisco, California',
@@ -25,8 +28,9 @@ export const dispensariesData = [
     averageRating: 4.8,
     numRatings: 629,
     image: drgreenthumb,
+    locationType: ['storefront', 'delivery'],
     types: ["Dispensary", "Recreational"],
-    tags: ["Closed", "Order online", "Curbside pickup"],
+    tags: ["Open Now", "Order online", "Curbside pickup"],
     latitude: 37.775543,
     longitude: -122.469988,
     location: 'San Francisco, California',

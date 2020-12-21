@@ -8,7 +8,6 @@ const imgUrls = [
   "https://images.weedmaps.com/creatives/000/010/868/graphic/original/1605663203-2600x750_Lifted_spirits_for_less.png?bg=None&blend-align=right&blend-mode=normal&blend-pad=60&blend64=aHR0cHM6Ly9pbWFnZXMud2VlZG1hcHMuY29tL2NyZWF0aXZlcy8wMDAvMDEwLzg3MC9ncmFwaGljL29yaWdpbmFsLzE2MDU2NjMyMDUtMTAwMHgxMDAwLUxpZnRlZF9zcGlyaXRzX2Zvcl9sZXNzLnBuZz9kcHI9MyZoPTQwMA&dpr=3&fit=crop&h=400&mark-align=left%2Cmiddle&mark-x=0&mark64=aHR0cHM6Ly9pbWFnZXMud2VlZG1hcHMuY29tL2NyZWF0aXZlcy8wMDAvMDEwLzg2OS9ncmFwaGljL29yaWdpbmFsLzE2MDU2NjMyMDQtdGVtcGZpbGUyMDIwMTExOC00Mi0xdHFndTFiP2Rwcj0zJnc9MTQ0MA&mark_params%5Bdpr%5D=3&mark_params%5Bw%5D=1440&q=100&w=1440",
   "https://images.weedmaps.com/creatives/000/010/721/graphic/original/1605642548-2600x750-Cozy_up_with_some_bud.png?bg=None&blend-align=right&blend-mode=normal&blend-pad=60&blend64=aHR0cHM6Ly9pbWFnZXMud2VlZG1hcHMuY29tL2NyZWF0aXZlcy8wMDAvMDEwLzcyMy9ncmFwaGljL29yaWdpbmFsLzE2MDU2NDI1NTEtMTAwMHgxMDAwLUNvenlfdXBfd2l0aF9zb21lX2J1ZC5wbmc_ZHByPTMmaD00MDA&dpr=3&fit=crop&h=400&mark-align=left%2Cmiddle&mark-x=0&mark64=aHR0cHM6Ly9pbWFnZXMud2VlZG1hcHMuY29tL2NyZWF0aXZlcy8wMDAvMDEwLzcyMi9ncmFwaGljL29yaWdpbmFsLzE2MDU2NDI1NTAtdGVtcGZpbGUyMDIwMTExNy01NC1nNXp3NDQ_ZHByPTMmdz0xNDQw&mark_params%5Bdpr%5D=3&mark_params%5Bw%5D=1440&q=100&w=1440"
 ]
-
 interface BrandsProps {
 
 }
@@ -33,14 +32,14 @@ const Brands: React.FC<BrandsProps> = ({}) => {
       <div className="categories-nav">
         <div className="wrapper">
           <div className="categories-buttons">
-            <CategoryButton selected={true} onClick={()=>setCategory('discover')} className="category">Discover</CategoryButton>
-            <CategoryButton onClick={()=>setCategory('flower')} className="category">Flower</CategoryButton>
-            <CategoryButton onClick={()=>setCategory('concentrates')} className="category">Concentrates</CategoryButton>
-            <CategoryButton onClick={()=>setCategory('vapepens')} className="category">Vape pens</CategoryButton>
-            <CategoryButton onClick={()=>setCategory('edibles')} className="category">Edibles</CategoryButton>
-            <CategoryButton onClick={()=>setCategory('cbdthc')} className="category">CDB/THC</CategoryButton>
-            <CategoryButton onClick={()=>setCategory('cbd')} className="category">CBD</CategoryButton>
-            <CategoryButton onClick={()=>setCategory('allbrands')} className="category">All Brands</CategoryButton>
+            <CategoryButton selected={true} onClick={()=>setCategory('discover')}>Discover</CategoryButton>
+            <CategoryButton onClick={()=>setCategory('flower')}>Flower</CategoryButton>
+            <CategoryButton onClick={()=>setCategory('concentrates')}>Concentrates</CategoryButton>
+            <CategoryButton onClick={()=>setCategory('vapepens')}>Vape pens</CategoryButton>
+            <CategoryButton onClick={()=>setCategory('edibles')}>Edibles</CategoryButton>
+            <CategoryButton onClick={()=>setCategory('cbdthc')}>CDB/THC</CategoryButton>
+            <CategoryButton onClick={()=>setCategory('cbd')}>CBD</CategoryButton>
+            <CategoryButton onClick={()=>setCategory('allbrands')}>All Brands</CategoryButton>
           </div>
         </div>
       </div>
